@@ -8,4 +8,4 @@ export function Header() {
         <p>boom boom</p>
     </header>
   )
-}
+};
