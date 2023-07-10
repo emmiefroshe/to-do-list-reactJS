@@ -27,7 +27,6 @@ function Login() {
                     <div className={styles.action}>
                         <button>SIGN UP</button>
                         <button type='submit'><Link to={"/todo"}>LOG IN</Link></button>
-                        {/* <Link to={"/component/Header"}>login</Link> */}
                     </div>
                 </form>
             </div>

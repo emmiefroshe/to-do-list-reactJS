@@ -2,6 +2,7 @@ import { Task } from "../Task";
 import styles from "./tasks.module.css";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { useState } from "react";
+import { format } from "date-fns";
 
 export function Tasks({ tasks, onDelete, onComplete, handleAddTask }) {
   const [title, setTitle] = useState("");
@@ -19,9 +20,12 @@ export function Tasks({ tasks, onDelete, onComplete, handleAddTask }) {
 
   const tasksQuantity = tasks.length;
   const completedTasks = tasks.filter((task) => task.isCompleted).length;
+  const currentDate = format(new Date(), "MMMM d, yyyy");
+
 
   return (
     <section className={styles.tasks}>
+      <p className={styles.date}>{currentDate}</p>
       <form onSubmit={handleSubmit} className={styles.newTaskForm}>
         <input
           placeholder="Add a new task"
