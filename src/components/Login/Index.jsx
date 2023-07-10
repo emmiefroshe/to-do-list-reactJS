@@ -1,30 +1,38 @@
-
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from "./login.module.css"
 
 
 function Login() {
-    return(
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Login:', email, password);
+  };
+
+    return (
         <div className={styles.login}>
-            <div className={styles.login_container}>
-        <form>
-        <h1>Login</h1>
-        <div className={styles.login_content}>
-            <div className={styles.login_input}>
-            <input type="email" placeholder='EMAIL'/>
+            <div className={styles.container}>
+                <form onSubmit={handleSubmit}>
+                    <h1>Login</h1>
+                    <div className={styles.content}>
+                        <div className={styles.input}>
+                            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='EMAIL' />
+                            <input  type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='PASSWORD' />
+                        </div>
+                        <a href="#">FORGOT YOUR PASSWORD?</a>
+                    </div>
+                    <div className={styles.action}>
+                        <button>SIGN UP</button>
+                        <button type='submit'><Link to={"/todo"}>LOG IN</Link></button>
+                        {/* <Link to={"/component/Header"}>login</Link> */}
+                    </div>
+                </form>
             </div>
-            <div className={styles.login_input}>
-            <input type="password" placeholder='PASSWORD'/>
-            </div>
-            <a href="#">FORGOT YOUR PASSWORD?</a>
         </div>
-        <div className={styles.login_action}>
-        <button>SIGN UP</button>
-        <button>LOG IN</button>
-        </div>
-        </form>
-        </div>
-        </div>
-  )
+    )
 };
 
 export default Login
