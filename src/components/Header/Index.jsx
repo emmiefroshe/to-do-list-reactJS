@@ -1,4 +1,4 @@
-import MY_TODOS from "../../assets/MY_TODOS.PNG";
+import MY_TODOS from "../../assets/MY_TODOS.png";
 import styles from "./header.module.css";
 
 export function Header() {
