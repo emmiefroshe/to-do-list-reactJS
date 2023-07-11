@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import  Header  from "./components/Header";
-import { Tasks } from "./components/Tasks";
+import  Header  from "./components/Header/Index";
+import Tasks from "./components/Tasks/index";
 
 const LOCAL_STORAGE_KEY = "todo:tasks";
 
