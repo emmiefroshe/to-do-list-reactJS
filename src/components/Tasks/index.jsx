@@ -4,7 +4,7 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import { useState } from "react";
 import { format } from "date-fns";
 
-export function Tasks({ tasks, onDelete, onComplete, handleAddTask }) {
+export default function Tasks({ tasks, onDelete, onComplete, handleAddTask }) {
   const [title, setTitle] = useState("");
 
   function handleSubmit(event) {
